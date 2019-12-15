@@ -1,9 +1,9 @@
 //
 //  SceneDelegate.swift
-//  RequestsLesson
+//  vk_client
 //
-//  Created by Ильдар Залялов on 13.12.2019.
-//  Copyright © 2019 Ildar Zalyalov. All rights reserved.
+//  Created by Никита Лужбин on 15.12.2019.
+//  Copyright © 2019 Никита. All rights reserved.
 //
 
 import UIKit

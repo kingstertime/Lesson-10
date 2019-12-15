@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  RequestsLesson
+//  vk_client
 //
-//  Created by Ильдар Залялов on 13.12.2019.
-//  Copyright © 2019 Ildar Zalyalov. All rights reserved.
+//  Created by Никита Лужбин on 15.12.2019.
+//  Copyright © 2019 Никита. All rights reserved.
 //
 
 import UIKit
@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "RequestsLesson")
+        let container = NSPersistentContainer(name: "vk_client")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
