@@ -7,25 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		420D03A423A970CD00C31A41 /* AuthResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D03A323A970CD00C31A41 /* AuthResponseModel.swift */; };
 		42A7BB6D23A6484F00B65A8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A7BB6C23A6484F00B65A8F /* AppDelegate.swift */; };
 		42A7BB6F23A6484F00B65A8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A7BB6E23A6484F00B65A8F /* SceneDelegate.swift */; };
-		42A7BB7123A6484F00B65A8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A7BB7023A6484F00B65A8F /* ViewController.swift */; };
 		42A7BB7423A6484F00B65A8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A7BB7223A6484F00B65A8F /* Main.storyboard */; };
 		42A7BB7723A6484F00B65A8F /* vk_client.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42A7BB7523A6484F00B65A8F /* vk_client.xcdatamodeld */; };
 		42A7BB7923A6485300B65A8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42A7BB7823A6485300B65A8F /* Assets.xcassets */; };
 		42A7BB7C23A6485300B65A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A7BB7A23A6485300B65A8F /* LaunchScreen.storyboard */; };
+		42A7BB8423A649D300B65A8F /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A7BB8323A649D300B65A8F /* Authorization.storyboard */; };
+		42A7BB8723A64AFE00B65A8F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A7BB8623A64AFE00B65A8F /* Constants.swift */; };
+		42A7BB8A23A64B8F00B65A8F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A7BB8923A64B8F00B65A8F /* CustomButton.swift */; };
+		42B00BCB23A67ECC00833252 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B00BCA23A67ECC00833252 /* LogInViewController.swift */; };
+		42B00BCD23A67F2500833252 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B00BCC23A67F2500833252 /* SignUpViewController.swift */; };
+		42B00BD023A680D400833252 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B00BCF23A680D400833252 /* LocalDataManager.swift */; };
+		42B00BD223A680DC00833252 /* RemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B00BD123A680DC00833252 /* RemoteDataManager.swift */; };
+		42D31B6C23A64E540022EA6F /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D31B6B23A64E540022EA6F /* AppExtension.swift */; };
+		42D31B6E23A64EDE0022EA6F /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D31B6D23A64EDE0022EA6F /* AuthorizationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		420D03A323A970CD00C31A41 /* AuthResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponseModel.swift; sourceTree = "<group>"; };
 		42A7BB6923A6484F00B65A8F /* vk_client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vk_client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42A7BB6C23A6484F00B65A8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42A7BB6E23A6484F00B65A8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		42A7BB7023A6484F00B65A8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		42A7BB7323A6484F00B65A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42A7BB7623A6484F00B65A8F /* vk_client.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = vk_client.xcdatamodel; sourceTree = "<group>"; };
 		42A7BB7823A6485300B65A8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42A7BB7B23A6485300B65A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42A7BB7D23A6485300B65A8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42A7BB8323A649D300B65A8F /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
+		42A7BB8623A64AFE00B65A8F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		42A7BB8923A64B8F00B65A8F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		42B00BCA23A67ECC00833252 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		42B00BCC23A67F2500833252 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		42B00BCF23A680D400833252 /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
+		42B00BD123A680DC00833252 /* RemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataManager.swift; sourceTree = "<group>"; };
+		42D31B6B23A64E540022EA6F /* AppExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExtension.swift; sourceTree = "<group>"; };
+		42D31B6D23A64EDE0022EA6F /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		420D03A223A9709C00C31A41 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				420D03A323A970CD00C31A41 /* AuthResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		42A7BB6023A6484E00B65A8F = {
 			isa = PBXGroup;
 			children = (
@@ -58,16 +84,57 @@
 		42A7BB6B23A6484F00B65A8F /* vk_client */ = {
 			isa = PBXGroup;
 			children = (
-				42A7BB6C23A6484F00B65A8F /* AppDelegate.swift */,
-				42A7BB6E23A6484F00B65A8F /* SceneDelegate.swift */,
-				42A7BB7023A6484F00B65A8F /* ViewController.swift */,
 				42A7BB7223A6484F00B65A8F /* Main.storyboard */,
-				42A7BB7823A6485300B65A8F /* Assets.xcassets */,
+				420D03A223A9709C00C31A41 /* Models */,
+				42B00BCE23A680C100833252 /* DataManagers */,
+				42A7BB8523A64AC900B65A8F /* Helpers */,
+				42D31B6F23A6579C0022EA6F /* AuthorizationScreen */,
 				42A7BB7A23A6485300B65A8F /* LaunchScreen.storyboard */,
 				42A7BB7D23A6485300B65A8F /* Info.plist */,
+				42A7BB6C23A6484F00B65A8F /* AppDelegate.swift */,
+				42A7BB6E23A6484F00B65A8F /* SceneDelegate.swift */,
+				42A7BB7823A6485300B65A8F /* Assets.xcassets */,
 				42A7BB7523A6484F00B65A8F /* vk_client.xcdatamodeld */,
 			);
 			path = vk_client;
+			sourceTree = "<group>";
+		};
+		42A7BB8523A64AC900B65A8F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				42D31B6A23A64E420022EA6F /* Extensions */,
+				42A7BB8623A64AFE00B65A8F /* Constants.swift */,
+				42A7BB8923A64B8F00B65A8F /* CustomButton.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		42B00BCE23A680C100833252 /* DataManagers */ = {
+			isa = PBXGroup;
+			children = (
+				42B00BCF23A680D400833252 /* LocalDataManager.swift */,
+				42B00BD123A680DC00833252 /* RemoteDataManager.swift */,
+			);
+			path = DataManagers;
+			sourceTree = "<group>";
+		};
+		42D31B6A23A64E420022EA6F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				42D31B6B23A64E540022EA6F /* AppExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		42D31B6F23A6579C0022EA6F /* AuthorizationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				42A7BB8323A649D300B65A8F /* Authorization.storyboard */,
+				42D31B6D23A64EDE0022EA6F /* AuthorizationViewController.swift */,
+				42B00BCA23A67ECC00833252 /* LogInViewController.swift */,
+				42B00BCC23A67F2500833252 /* SignUpViewController.swift */,
+			);
+			path = AuthorizationScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42A7BB8423A649D300B65A8F /* Authorization.storyboard in Resources */,
 				42A7BB7C23A6485300B65A8F /* LaunchScreen.storyboard in Resources */,
 				42A7BB7923A6485300B65A8F /* Assets.xcassets in Resources */,
 				42A7BB7423A6484F00B65A8F /* Main.storyboard in Resources */,
@@ -141,7 +209,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42A7BB7123A6484F00B65A8F /* ViewController.swift in Sources */,
+				420D03A423A970CD00C31A41 /* AuthResponseModel.swift in Sources */,
+				42A7BB8723A64AFE00B65A8F /* Constants.swift in Sources */,
+				42B00BCB23A67ECC00833252 /* LogInViewController.swift in Sources */,
+				42D31B6C23A64E540022EA6F /* AppExtension.swift in Sources */,
+				42B00BD023A680D400833252 /* LocalDataManager.swift in Sources */,
+				42B00BCD23A67F2500833252 /* SignUpViewController.swift in Sources */,
+				42A7BB8A23A64B8F00B65A8F /* CustomButton.swift in Sources */,
+				42B00BD223A680DC00833252 /* RemoteDataManager.swift in Sources */,
+				42D31B6E23A64EDE0022EA6F /* AuthorizationViewController.swift in Sources */,
 				42A7BB7723A6484F00B65A8F /* vk_client.xcdatamodeld in Sources */,
 				42A7BB6D23A6484F00B65A8F /* AppDelegate.swift in Sources */,
 				42A7BB6F23A6484F00B65A8F /* SceneDelegate.swift in Sources */,
@@ -220,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -298,7 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "dest.vk-client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -316,7 +392,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "dest.vk-client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
