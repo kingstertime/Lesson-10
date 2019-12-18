@@ -40,7 +40,7 @@ class ProfileInfoCell: UITableViewCell {
     func setupUI() {
         
         avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
-        editPofileButton.layer.cornerRadius = editPofileButton.frame.height / 6
+        editPofileButton.layer.cornerRadius = editPofileButton.frame.height / 2
     }
     
     @IBAction func moreInfoButtonPressed(_ sender: UIButton) {
