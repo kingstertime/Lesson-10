@@ -1,16 +1,39 @@
 import UIKit
 
 private let profileInfoCellIdentifier = "ProfileInfoCell"
+private let postCellIdentifier = "PostCell"
 
 class UserPageViewController: UITableViewController {
     
     var profileInfo: ProfileInfo!
+    var posts: [Post] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTableView()
         title = profileInfo.response.first!.first_name
+        fetchPosts()
+    }
+    
+    //MARK: - Data workers
+    
+    func fetchPosts() {
+        
+        RemoteDataManager.shared.getPosts { posts, error in
+            
+            if error != nil {
+                return
+            }
+            
+            if let posts = posts {
+                
+                DispatchQueue.main.async {
+                    self.posts = posts
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 
     // MARK: - Table view
@@ -20,7 +43,8 @@ class UserPageViewController: UITableViewController {
         let profileInfoCellNib = UINib(nibName: "ProfileInfoCell", bundle: nil)
         tableView.register(profileInfoCellNib, forCellReuseIdentifier: profileInfoCellIdentifier)
         
-        //Register postCell
+        let postCellNib = UINib(nibName: "PostCell", bundle: nil)
+        tableView.register(postCellNib, forCellReuseIdentifier: postCellIdentifier)
         
         tableView.allowsSelection = false
     }
@@ -35,7 +59,7 @@ class UserPageViewController: UITableViewController {
         if section == 0 {
             return 1
         } else {
-            return 0 //TODO:
+            return posts.count
         }
     }
     
@@ -48,16 +72,21 @@ class UserPageViewController: UITableViewController {
             return cell
             
         } else {
-            return UITableViewCell()
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: postCellIdentifier) as! PostCell
+            cell.setup(for: posts[indexPath.row])
+            return cell
         }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
+
         if indexPath.section == 0 {
             return 165
         } else {
-            return tableView.estimatedRowHeight
+            
+            //TODO: Переделать нормально, чтобы размер ячейки зависел от размера картинки
+            return 370
         }
     }
 }

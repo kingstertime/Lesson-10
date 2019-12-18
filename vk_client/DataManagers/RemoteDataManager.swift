@@ -5,11 +5,15 @@ class RemoteDataManager {
     
     static let shared = RemoteDataManager()
     
-    func getProfileInfo(access_token: String, complition: @escaping (ProfileInfo?, Error?) -> Void ) {
+    //TODO: Отвратительно, переделать
+    var userID: Int!
+    var access_token: String!
+    
+    func getProfileInfo(userID: String, complition: @escaping (ProfileInfo?, Error?) -> Void ) {
         
         let methodName = "users.get"
-        let params = "user_ids=63046388&fields=online,sex,bdate,city,photo_200"
-        let urlString = "https://api.vk.com/method/\(methodName)?\(params)&access_token=\(access_token)&v=5.103"
+        let params = "user_ids=\(userID)&fields=online,sex,bdate,city,photo_200"
+        let urlString = "https://api.vk.com/method/\(methodName)?\(params)&access_token=\(access_token!)&v=5.103"
         
         if let url = URL(string: urlString) {
         
@@ -32,7 +36,6 @@ class RemoteDataManager {
             task.resume()
         }
     }
-        
     
     //Авторизовывает пользователя, и возвращает access_token и id юзера
     func registerUser(login: String, password: String, complition: @escaping (AuthResponseModel?, Error?) -> ()) {
@@ -57,6 +60,12 @@ class RemoteDataManager {
                     guard let data = data else { return }
                     
                     let authResponseModel = try! JSONDecoder().decode(AuthResponseModel.self, from: data)
+                    
+                    //
+                    self.access_token = authResponseModel.access_token
+                    self.userID = authResponseModel.user_id
+                    //
+                    
                     complition(authResponseModel, nil)
                 }
             }
@@ -82,6 +91,66 @@ class RemoteDataManager {
                     guard let data = data else { return }
                     guard let image = UIImage(data: data) else { return }
                     complition(image, nil)
+                }
+            }
+            
+            task.resume()
+        }
+    }
+    
+    func getPosts(complition: @escaping ([Post]?, Error?) -> Void) {
+        
+        let methodName = "wall.get"
+        let params = "owner_id=\(userID!)&count=100&filter=all"
+        let stringURL = "https://api.vk.com/method/\(methodName)?\(params)&access_token=\(access_token!)&v=5.103"
+        
+        if let url = URL(string: stringURL) {
+            
+            let session = URLSession.shared
+            
+            let task = session.dataTask(with: url) { data, response, error in
+                
+                if error != nil {
+                    
+                    complition(nil, error)
+                    
+                } else {
+                    
+                    guard let data = data else { return }
+                    let userPosts = try! JSONDecoder().decode(UserPosts.self, from: data)
+                    let formattedPosts = userPosts.response.items
+                    
+                    complition(formattedPosts, nil)
+                }
+            }
+            
+            task.resume()
+        }
+    }
+    
+    func getUserImage(for ownerID: String, complition: @escaping ([Post]?, Error?) -> Void) {
+        
+        let methodName = "wall.get"
+        let params = "owner_id=\(ownerID)&count=100&filter=all"
+        let stringURL = "https://api.vk.com/method/\(methodName)?\(params)&access_token=\(access_token!)&v=5.103"
+        
+        if let url = URL(string: stringURL) {
+            
+            let session = URLSession.shared
+            
+            let task = session.dataTask(with: url) { data, response, error in
+                
+                if error != nil {
+                    
+                    complition(nil, error)
+                    
+                } else {
+                    
+                    guard let data = data else { return }
+                    let userPosts = try! JSONDecoder().decode(UserPosts.self, from: data)
+                    let formattedPosts = userPosts.response.items
+                    
+                    complition(formattedPosts, nil)
                 }
             }
             

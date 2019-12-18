@@ -41,16 +41,15 @@
                         </subviews>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 лет, Москва" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0i9-c5-ZKw">
-                        <rect key="frame" x="105" y="72" width="115" height="18"/>
+                        <rect key="frame" x="105" y="72" width="132" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNh-6N-FJp">
-                        <rect key="frame" x="10" y="113" width="302" height="35"/>
+                        <rect key="frame" x="10" y="113" width="300" height="35"/>
                         <color key="backgroundColor" red="0.89735513929999999" green="0.92163604499999996" blue="0.95231634379999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="302" id="5pq-1q-j66"/>
                             <constraint firstAttribute="height" constant="35" id="Qua-2I-VQd"/>
                         </constraints>
                         <state key="normal" title="Редактировать">
@@ -61,7 +60,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ki9-s6-tfN">
-                        <rect key="frame" x="263" y="45" width="26" height="25"/>
+                        <rect key="frame" x="280" y="45" width="26" height="25"/>
                         <state key="normal" image="info.circle" catalog="system">
                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>

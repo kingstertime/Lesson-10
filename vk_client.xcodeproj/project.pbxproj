@@ -25,6 +25,7 @@
 		42A7BB8423A649D300B65A8F /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A7BB8323A649D300B65A8F /* Authorization.storyboard */; };
 		42A7BB8723A64AFE00B65A8F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A7BB8623A64AFE00B65A8F /* Constants.swift */; };
 		42A7BB8A23A64B8F00B65A8F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A7BB8923A64B8F00B65A8F /* CustomButton.swift */; };
+		42AB7AAE23AAA7BB0091C73D /* UserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB7AAD23AAA7BB0091C73D /* UserPosts.swift */; };
 		42B00BCB23A67ECC00833252 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B00BCA23A67ECC00833252 /* LogInViewController.swift */; };
 		42B00BCD23A67F2500833252 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B00BCC23A67F2500833252 /* SignUpViewController.swift */; };
 		42B00BD023A680D400833252 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B00BCF23A680D400833252 /* LocalDataManager.swift */; };
@@ -54,6 +55,7 @@
 		42A7BB8323A649D300B65A8F /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		42A7BB8623A64AFE00B65A8F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		42A7BB8923A64B8F00B65A8F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		42AB7AAD23AAA7BB0091C73D /* UserPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPosts.swift; sourceTree = "<group>"; };
 		42B00BCA23A67ECC00833252 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		42B00BCC23A67F2500833252 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		42B00BCF23A680D400833252 /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			children = (
 				420D03A323A970CD00C31A41 /* AuthResponseModel.swift */,
 				420D03A523A9801300C31A41 /* ProfileInfo.swift */,
+				42AB7AAD23AAA7BB0091C73D /* UserPosts.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42AB7AAE23AAA7BB0091C73D /* UserPosts.swift in Sources */,
 				4267C6E423A99BBD00212A48 /* PostCell.swift in Sources */,
 				420D03A623A9801300C31A41 /* ProfileInfo.swift in Sources */,
 				420D03A423A970CD00C31A41 /* AuthResponseModel.swift in Sources */,

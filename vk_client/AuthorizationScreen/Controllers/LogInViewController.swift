@@ -23,11 +23,10 @@ class LogInViewController: UIViewController {
             
             if let authResponseModel = authResponseModel {
                 
-                //let userID = String(authResponseModel.user_id)
-                let access_token = authResponseModel.access_token
+                //let access_token = authResponseModel.access_token
+                let userID = String(authResponseModel.user_id)
                 
-                self.remoteDM.getProfileInfo(access_token: access_token) { profileInfo, error in
-                    
+                self.remoteDM.getProfileInfo(userID: userID) { profileInfo, error in
                     if error != nil {
                         //TODO: Алерт об ошибке авторизации
                         return

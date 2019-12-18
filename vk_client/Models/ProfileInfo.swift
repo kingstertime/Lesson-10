@@ -2,11 +2,12 @@ import Foundation
 
 struct ProfileInfo: Codable {
     
-    var response: [Response]
+    var response: [ProfileInfoResponse]
 }
 
-struct Response: Codable {
+struct ProfileInfoResponse: Codable {
     
+    var id: Int
     var photo_200: String
     var first_name: String
     var last_name: String
