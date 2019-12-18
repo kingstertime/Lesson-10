@@ -37,6 +37,16 @@ class LogInViewController: UIViewController {
                         
                         print(profileInfoModel.response)
                         //Переход на стенку пользователя, передаем profileOnfoModel
+                        
+                        DispatchQueue.main.async {
+                            
+                            let userPageStoryBoard = UIStoryboard(name: "UserPage", bundle: nil)
+                            let navController = userPageStoryBoard.instantiateInitialViewController() as! UINavigationController
+                            let userPageVC = navController.viewControllers.first! as! UserPageViewController
+                            userPageVC.profileInfo = profileInfoModel
+                            
+                            UIApplication.setRootView(navController)
+                        }
                     }
                 }
             }

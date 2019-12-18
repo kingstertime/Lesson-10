@@ -64,4 +64,28 @@ class RemoteDataManager {
             task.resume()
         }
     }
+    
+    func getImage(by stringURL: String, complition: @escaping (UIImage?, Error?) -> Void) {
+        
+        if let url = URL(string: stringURL) {
+            
+            let session = URLSession.shared
+            
+            let task = session.dataTask(with: url) { data, response, error in
+                
+                if error != nil {
+                    
+                    complition(nil, error)
+                    
+                } else {
+                    
+                    guard let data = data else { return }
+                    guard let image = UIImage(data: data) else { return }
+                    complition(image, nil)
+                }
+            }
+            
+            task.resume()
+        }
+    }
 }
