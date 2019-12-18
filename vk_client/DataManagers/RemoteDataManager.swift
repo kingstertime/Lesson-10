@@ -5,15 +5,42 @@ class RemoteDataManager {
     
     static let shared = RemoteDataManager()
     
+    func getProfileInfo(access_token: String, complition: @escaping (ProfileInfo?, Error?) -> Void ) {
+        
+        let methodName = "users.get"
+        let params = "user_ids=63046388&fields=online,sex,bdate,city,photo_200"
+        let urlString = "https://api.vk.com/method/\(methodName)?\(params)&access_token=\(access_token)&v=5.103"
+        
+        if let url = URL(string: urlString) {
+        
+            let session = URLSession.shared
+            
+            let task = session.dataTask(with: url) { data, response, error in
+                
+                if error != nil {
+                    
+                    complition(nil, error)
+                    
+                } else {
+                    
+                    guard let data = data else { return }
+                    
+                    let profileInfoModel = try! JSONDecoder().decode(ProfileInfo.self, from: data)
+                    complition(profileInfoModel, nil)
+                }
+            }
+            task.resume()
+        }
+    }
+        
+    
     //Авторизовывает пользователя, и возвращает access_token и id юзера
-    func registerUser(login: String, password: String, complition: (String, String) -> ()) {
+    func registerUser(login: String, password: String, complition: @escaping (AuthResponseModel?, Error?) -> ()) {
         
         let clientID = "3140623"
         let clientSecret = "VeWdmVclDCtn6ihuP1nt"
         
         let urlString = "https://oauth.vk.com/token?grant_type=password&client_id=\(clientID)&client_secret=\(clientSecret)&username=\(login)&password=\(password)&v=5.103&2fa_supported=0"
-        
-        print("URL: \(urlString)")
         
         if let url = URL(string: urlString) {
             
@@ -23,23 +50,14 @@ class RemoteDataManager {
                 
                 if error != nil {
                     
-                    print(error?.localizedDescription as Any)
+                    complition(nil, error)
                     
                 } else {
                     
                     guard let data = data else { return }
                     
-                    guard let stringData = String(data: data, encoding: .utf8) else { return }
-                    print("Data: \(stringData)")
-                    
                     let authResponseModel = try! JSONDecoder().decode(AuthResponseModel.self, from: data)
-                    
-                    print("access_token: \(authResponseModel.access_token)")
-                    print("user_id: \(authResponseModel.user_id)")
-                    
-                    DispatchQueue.main.async {
-                        UIApplication.shared.openURL(NSURL(string:"http://www.vk.com/id\(authResponseModel.user_id)")! as URL)
-                    }
+                    complition(authResponseModel, nil)
                 }
             }
             

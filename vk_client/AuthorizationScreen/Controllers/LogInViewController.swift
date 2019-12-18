@@ -14,8 +14,32 @@ class LogInViewController: UIViewController {
         guard let login = loginTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         
-        remoteDM.registerUser(login: login, password: password) { userID, access_token in
+        remoteDM.registerUser(login: login, password: password) { authResponseModel, error in
             
+            if error != nil {
+                //TODO: Алерт об ошибке авторизации
+                return
+            }
+            
+            if let authResponseModel = authResponseModel {
+                
+                //let userID = String(authResponseModel.user_id)
+                let access_token = authResponseModel.access_token
+                
+                self.remoteDM.getProfileInfo(access_token: access_token) { profileInfo, error in
+                    
+                    if error != nil {
+                        //TODO: Алерт об ошибке авторизации
+                        return
+                    }
+                    
+                    if let profileInfoModel = profileInfo {
+                        
+                        print(profileInfoModel.response)
+                        //Переход на стенку пользователя, передаем profileOnfoModel
+                    }
+                }
+            }
         }
     }
     
