@@ -6,8 +6,8 @@ class RemoteDataManager {
     static let shared = RemoteDataManager()
     
     //TODO: Отвратительно, переделать
-    var userID: Int!
-    var access_token: String!
+    private var userID: Int!
+    private var access_token: String!
     
     func getProfileInfo(userID: String, complition: @escaping (ProfileInfo?, Error?) -> Void ) {
         

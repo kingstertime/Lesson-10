@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		420D03A423A970CD00C31A41 /* AuthResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D03A323A970CD00C31A41 /* AuthResponseModel.swift */; };
 		420D03A623A9801300C31A41 /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D03A523A9801300C31A41 /* ProfileInfo.swift */; };
+		4239034A23AB8140003DF13A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4239034923AB8140003DF13A /* UserDefaultsManager.swift */; };
 		4267C6DA23A99A2800212A48 /* UserPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4267C6D923A99A2800212A48 /* UserPage.storyboard */; };
 		4267C6E023A99BAF00212A48 /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267C6DE23A99BAF00212A48 /* ProfileInfoCell.swift */; };
 		4267C6E123A99BAF00212A48 /* ProfileInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4267C6DF23A99BAF00212A48 /* ProfileInfoCell.xib */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		420D03A323A970CD00C31A41 /* AuthResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponseModel.swift; sourceTree = "<group>"; };
 		420D03A523A9801300C31A41 /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
+		4239034923AB8140003DF13A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		4267C6D923A99A2800212A48 /* UserPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserPage.storyboard; sourceTree = "<group>"; };
 		4267C6DE23A99BAF00212A48 /* ProfileInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCell.swift; sourceTree = "<group>"; };
 		4267C6DF23A99BAF00212A48 /* ProfileInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoCell.xib; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				42B00BCF23A680D400833252 /* LocalDataManager.swift */,
 				42B00BD123A680DC00833252 /* RemoteDataManager.swift */,
+				4239034923AB8140003DF13A /* UserDefaultsManager.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				420D03A623A9801300C31A41 /* ProfileInfo.swift in Sources */,
 				420D03A423A970CD00C31A41 /* AuthResponseModel.swift in Sources */,
 				429A0AE623AA4B1700ED2ACF /* UserPageViewController.swift in Sources */,
+				4239034A23AB8140003DF13A /* UserDefaultsManager.swift in Sources */,
 				42A7BB8723A64AFE00B65A8F /* Constants.swift in Sources */,
 				42B00BCB23A67ECC00833252 /* LogInViewController.swift in Sources */,
 				42D31B6C23A64E540022EA6F /* AppExtension.swift in Sources */,

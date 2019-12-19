@@ -23,7 +23,6 @@ class LogInViewController: UIViewController {
             
             if let authResponseModel = authResponseModel {
                 
-                //let access_token = authResponseModel.access_token
                 let userID = String(authResponseModel.user_id)
                 
                 self.remoteDM.getProfileInfo(userID: userID) { profileInfo, error in
@@ -34,8 +33,8 @@ class LogInViewController: UIViewController {
                     
                     if let profileInfoModel = profileInfo {
                         
-                        print(profileInfoModel.response)
-                        //Переход на стенку пользователя, передаем profileOnfoModel
+                        //Сохраняем данные пользователя в UserDefaults
+                        UserDefaultsManager.shared.saveUser(login: login, password: password)
                         
                         DispatchQueue.main.async {
                             
