@@ -19,7 +19,7 @@ class ProfileInfoCell: UITableViewCell {
         
         let age = Helper.getAgeFromBirthDate(birthDate: profileInfoModel.bdate)
         let formattedAge = "\(age) лет"
-        ageAndCityLabel.text = formattedAge + ", " + profileInfoModel.city.title
+        ageAndCityLabel.text = formattedAge + ", " + (profileInfoModel.city?.title ?? "")
         
         let imageStringURL = profileInfoModel.photo_200
         RemoteDataManager.shared.getImage(by: imageStringURL) { image, error in

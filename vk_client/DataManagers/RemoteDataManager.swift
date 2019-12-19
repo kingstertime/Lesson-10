@@ -29,6 +29,9 @@ class RemoteDataManager {
                     
                     guard let data = data else { return }
                     
+                    print("Profile info: ")
+                    print(String(data: data, encoding: .utf8))
+                    
                     let profileInfoModel = try! JSONDecoder().decode(ProfileInfo.self, from: data)
                     complition(profileInfoModel, nil)
                 }
@@ -45,6 +48,8 @@ class RemoteDataManager {
         
         let urlString = "https://oauth.vk.com/token?grant_type=password&client_id=\(clientID)&client_secret=\(clientSecret)&username=\(login)&password=\(password)&v=5.103&2fa_supported=0"
         
+        print(urlString)
+        
         if let url = URL(string: urlString) {
             
             let session = URLSession.shared
@@ -59,14 +64,23 @@ class RemoteDataManager {
                     
                     guard let data = data else { return }
                     
-                    let authResponseModel = try! JSONDecoder().decode(AuthResponseModel.self, from: data)
-                    
-                    //
-                    self.access_token = authResponseModel.access_token
-                    self.userID = authResponseModel.user_id
-                    //
-                    
-                    complition(authResponseModel, nil)
+                    if let authResponseModel = try? JSONDecoder().decode(AuthResponseModel.self, from: data) {
+                        
+                        self.access_token = authResponseModel.access_token
+                        self.userID = authResponseModel.user_id
+                        
+                        complition(authResponseModel, nil)
+                        
+                    } else {
+                        
+                        guard let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) else {
+                            print("Cannot decode errorResponse JSON")
+                            return
+                        }
+                        let authError = ErrorManager.getError(errorResponse: errorResponse)
+                        
+                        complition(nil, authError)
+                    }
                 }
             }
             

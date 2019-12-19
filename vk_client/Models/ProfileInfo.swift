@@ -14,7 +14,7 @@ struct ProfileInfoResponse: Codable {
     var sex: Int
     var bdate: String
     var online: Int
-    var city: City
+    var city: City?
 }
 
 ///Helper struct for UserModel

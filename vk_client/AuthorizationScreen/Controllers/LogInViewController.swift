@@ -17,8 +17,11 @@ class LogInViewController: UIViewController {
         remoteDM.registerUser(login: login, password: password) { authResponseModel, error in
             
             if error != nil {
-                //TODO: Алерт об ошибке авторизации
-                return
+                
+                DispatchQueue.main.async {
+                    AlertService.presentInfoAlert(on: self, title: "Error", message: error!.localizedDescription)
+                    return
+                }
             }
             
             if let authResponseModel = authResponseModel {
@@ -27,7 +30,7 @@ class LogInViewController: UIViewController {
                 
                 self.remoteDM.getProfileInfo(userID: userID) { profileInfo, error in
                     if error != nil {
-                        //TODO: Алерт об ошибке авторизации
+                        //TODO:
                         return
                     }
                     

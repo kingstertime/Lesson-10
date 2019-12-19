@@ -10,6 +10,9 @@
 		420D03A423A970CD00C31A41 /* AuthResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D03A323A970CD00C31A41 /* AuthResponseModel.swift */; };
 		420D03A623A9801300C31A41 /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420D03A523A9801300C31A41 /* ProfileInfo.swift */; };
 		4239034A23AB8140003DF13A /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4239034923AB8140003DF13A /* UserDefaultsManager.swift */; };
+		4239034C23AB9E84003DF13A /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4239034B23AB9E84003DF13A /* ErrorResponse.swift */; };
+		4239034E23AB9F56003DF13A /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4239034D23AB9F56003DF13A /* Errors.swift */; };
+		4239035023ABA44C003DF13A /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4239034F23ABA44C003DF13A /* AlertService.swift */; };
 		4267C6DA23A99A2800212A48 /* UserPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4267C6D923A99A2800212A48 /* UserPage.storyboard */; };
 		4267C6E023A99BAF00212A48 /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267C6DE23A99BAF00212A48 /* ProfileInfoCell.swift */; };
 		4267C6E123A99BAF00212A48 /* ProfileInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4267C6DF23A99BAF00212A48 /* ProfileInfoCell.xib */; };
@@ -39,6 +42,9 @@
 		420D03A323A970CD00C31A41 /* AuthResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponseModel.swift; sourceTree = "<group>"; };
 		420D03A523A9801300C31A41 /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
 		4239034923AB8140003DF13A /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		4239034B23AB9E84003DF13A /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		4239034D23AB9F56003DF13A /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		4239034F23ABA44C003DF13A /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		4267C6D923A99A2800212A48 /* UserPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserPage.storyboard; sourceTree = "<group>"; };
 		4267C6DE23A99BAF00212A48 /* ProfileInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCell.swift; sourceTree = "<group>"; };
 		4267C6DF23A99BAF00212A48 /* ProfileInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoCell.xib; sourceTree = "<group>"; };
@@ -83,6 +89,9 @@
 				420D03A323A970CD00C31A41 /* AuthResponseModel.swift */,
 				420D03A523A9801300C31A41 /* ProfileInfo.swift */,
 				42AB7AAD23AAA7BB0091C73D /* UserPosts.swift */,
+				4239034B23AB9E84003DF13A /* ErrorResponse.swift */,
+				4239034D23AB9F56003DF13A /* Errors.swift */,
+				4239034F23ABA44C003DF13A /* AlertService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4239035023ABA44C003DF13A /* AlertService.swift in Sources */,
 				42AB7AAE23AAA7BB0091C73D /* UserPosts.swift in Sources */,
 				4267C6E423A99BBD00212A48 /* PostCell.swift in Sources */,
 				420D03A623A9801300C31A41 /* ProfileInfo.swift in Sources */,
@@ -287,8 +297,10 @@
 				429A0AE423AA491600ED2ACF /* Helper.swift in Sources */,
 				42B00BCD23A67F2500833252 /* SignUpViewController.swift in Sources */,
 				42A7BB8A23A64B8F00B65A8F /* CustomButton.swift in Sources */,
+				4239034E23AB9F56003DF13A /* Errors.swift in Sources */,
 				42B00BD223A680DC00833252 /* RemoteDataManager.swift in Sources */,
 				42D31B6E23A64EDE0022EA6F /* AuthorizationViewController.swift in Sources */,
+				4239034C23AB9E84003DF13A /* ErrorResponse.swift in Sources */,
 				42A7BB7723A6484F00B65A8F /* vk_client.xcdatamodeld in Sources */,
 				4267C6E023A99BAF00212A48 /* ProfileInfoCell.swift in Sources */,
 				42A7BB6D23A6484F00B65A8F /* AppDelegate.swift in Sources */,

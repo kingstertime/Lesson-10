@@ -11,7 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             let login = lastUserData.0
             let password = lastUserData.1
-            let profileInfo = RemoteDataManager.shared.registerUser(login: login, password: password) { authResponseModel, error in
+            RemoteDataManager.shared.registerUser(login: login, password: password) { authResponseModel, error in
                 
                 if error != nil {
                     return
