@@ -52,7 +52,13 @@
                             <outlet property="delegate" destination="bMI-qC-cfs" id="YNO-hE-ydh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="UserName" id="wHn-Hb-dyH"/>
+                    <navigationItem key="navigationItem" title="UserName" id="wHn-Hb-dyH">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="logoutIcon" id="CCe-Oz-7YA">
+                            <connections>
+                                <action selector="logoutButtonPressed:" destination="bMI-qC-cfs" id="Dau-Gi-Myw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZ1-v8-DQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,8 +66,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="logoutIcon" width="16" height="16"/>
         <namedColor name="vkColor">
             <color red="0.28099998831748962" green="0.52700001001358032" blue="0.79900002479553223" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

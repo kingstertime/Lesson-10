@@ -16,6 +16,17 @@ class UserPageViewController: UITableViewController {
         fetchPosts()
     }
     
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        
+        UserDefaultsManager.shared.removeLastUser()
+        
+        let loginStoryboard = UIStoryboard(name: "Authorization", bundle: nil)
+        let authorizationVC = loginStoryboard.instantiateInitialViewController() as! AuthorizationViewController
+        
+        UIApplication.setRootView(authorizationVC)
+    }
+    
+    
     //MARK: - Data workers
     
     func fetchPosts() {
