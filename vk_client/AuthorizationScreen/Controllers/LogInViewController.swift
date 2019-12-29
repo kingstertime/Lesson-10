@@ -14,6 +14,7 @@ class LogInViewController: UIViewController {
         guard let login = loginTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         
+        //Авторизовываем пользователя и получаем его токен и ID страницы
         remoteDM.registerUser(login: login, password: password) { authResponseModel, error in
             
             if error != nil {
@@ -28,19 +29,23 @@ class LogInViewController: UIViewController {
                 
                 let userID = String(authResponseModel.user_id)
                 
+                //После получения токена, получаем модель данных страницы пользователя
                 self.remoteDM.getProfileInfo(userID: userID) { profileInfo, error in
+                    
                     if error != nil {
                         //TODO:
                         return
                     }
                     
+                    //Получаем данные профиля
                     if let profileInfoModel = profileInfo {
                         
-                        //Сохраняем данные пользователя в UserDefaults
+                        //Сохраняем логин и пароль пользователя в UserDefaults
                         UserDefaultsManager.shared.saveUser(login: login, password: password)
                         
                         DispatchQueue.main.async {
                             
+                            //Подготавливаем UserPageViewController и переходим на него 
                             let userPageStoryBoard = UIStoryboard(name: "UserPage", bundle: nil)
                             let navController = userPageStoryBoard.instantiateInitialViewController() as! UINavigationController
                             let userPageVC = navController.viewControllers.first! as! UserPageViewController
