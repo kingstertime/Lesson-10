@@ -32,8 +32,8 @@ class LogInViewController: UIViewController {
                 //После получения токена, получаем модель данных страницы пользователя
                 self.remoteDM.getProfileInfo(userID: userID) { profileInfo, error in
                     
-                    if error != nil {
-                        //TODO:
+                    if let error = error {
+                        AlertService.presentInfoAlert(on: self, title: "Error", message: error.localizedDescription)
                         return
                     }
                     
@@ -61,8 +61,8 @@ class LogInViewController: UIViewController {
     
     @IBAction func forgotPasswordButtonPressed(_ sender: Any) {
         
-        //TODO: Открываем URL странички в вк с восстановлением пароля
-        //Или просто алерт заглушка, если будет впадлу
+        guard let url = URL(string: "https://static.vk.com/restore/#/resetPassword") else { return }
+        UIApplication.shared.openURL(url)
     }
     
     @IBAction func dismissButtonPressed(_ sender: Any) {

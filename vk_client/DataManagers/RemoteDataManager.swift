@@ -5,40 +5,9 @@ class RemoteDataManager {
     
     static let shared = RemoteDataManager()
     
-    //TODO: Отвратительно, переделать
+    //Поля заполнятся после выполнения метода registerUser
     private var userID: Int!
     private var access_token: String!
-    
-    func getProfileInfo(userID: String, complition: @escaping (ProfileInfo?, Error?) -> Void ) {
-        
-        let methodName = "users.get"
-        let params = "user_ids=\(userID)&fields=online,sex,bdate,city,photo_200"
-        let urlString = "https://api.vk.com/method/\(methodName)?\(params)&access_token=\(access_token!)&v=5.103"
-        
-        if let url = URL(string: urlString) {
-        
-            let session = URLSession.shared
-            
-            let task = session.dataTask(with: url) { data, response, error in
-                
-                if error != nil {
-                    
-                    complition(nil, error)
-                    
-                } else {
-                    
-                    guard let data = data else { return }
-                    
-                    print("Profile info: ")
-                    print(String(data: data, encoding: .utf8))
-                    
-                    let profileInfoModel = try! JSONDecoder().decode(ProfileInfo.self, from: data)
-                    complition(profileInfoModel, nil)
-                }
-            }
-            task.resume()
-        }
-    }
     
     //Авторизовывает пользователя, и возвращает access_token и id юзера
     func registerUser(login: String, password: String, complition: @escaping (AuthResponseModel?, Error?) -> ()) {
@@ -47,8 +16,6 @@ class RemoteDataManager {
         let clientSecret = "VeWdmVclDCtn6ihuP1nt"
         
         let urlString = "https://oauth.vk.com/token?grant_type=password&client_id=\(clientID)&client_secret=\(clientSecret)&username=\(login)&password=\(password)&v=5.103&2fa_supported=0"
-        
-        print(urlString)
         
         if let url = URL(string: urlString) {
             
@@ -84,6 +51,37 @@ class RemoteDataManager {
                 }
             }
             
+            task.resume()
+        }
+    }
+    
+    func getProfileInfo(userID: String, complition: @escaping (ProfileInfo?, Error?) -> Void ) {
+        
+        let methodName = "users.get"
+        let params = "user_ids=\(userID)&fields=online,sex,bdate,city,photo_200"
+        let urlString = "https://api.vk.com/method/\(methodName)?\(params)&access_token=\(access_token!)&v=5.103"
+        
+        if let url = URL(string: urlString) {
+        
+            let session = URLSession.shared
+            
+            let task = session.dataTask(with: url) { data, response, error in
+                
+                if error != nil {
+                    
+                    complition(nil, error)
+                    
+                } else {
+                    
+                    guard let data = data else { return }
+                    
+                    print("Profile info: ")
+                    print(String(data: data, encoding: .utf8))
+                    
+                    let profileInfoModel = try! JSONDecoder().decode(ProfileInfo.self, from: data)
+                    complition(profileInfoModel, nil)
+                }
+            }
             task.resume()
         }
     }

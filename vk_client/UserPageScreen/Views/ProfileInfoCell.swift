@@ -13,8 +13,6 @@ class ProfileInfoCell: UITableViewCell {
         
         let profileInfoModel = profileInfo.response.first!
         
-        //TODO: Set online label
-        
         nameLabel.text = profileInfoModel.first_name + " " + profileInfoModel.last_name
         
         let age = Helper.getAgeFromBirthDate(birthDate: profileInfoModel.bdate)
