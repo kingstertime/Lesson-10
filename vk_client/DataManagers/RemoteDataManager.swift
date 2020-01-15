@@ -75,10 +75,13 @@ class RemoteDataManager {
                     
                     guard let data = data else { return }
                     
-                    print("Profile info: ")
-                    print(String(data: data, encoding: .utf8))
-                    
-                    let profileInfoModel = try! JSONDecoder().decode(ProfileInfo.self, from: data)
+                    guard let profileInfoModel = try? JSONDecoder().decode(ProfileInfo.self, from: data) else {
+                        
+                        if let errorStringResponse = String(data: data, encoding: .utf8) {
+                            print(errorStringResponse)
+                        }
+                        return
+                    }
                     complition(profileInfoModel, nil)
                 }
             }
@@ -110,7 +113,7 @@ class RemoteDataManager {
         }
     }
     
-    func getPosts(complition: @escaping ([Post]?, Error?) -> Void) {
+    func getUserPostsResponse(complition: @escaping (UserPostsResponse?, Error?) -> Void) {
         
         let methodName = "wall.get"
         let params = "owner_id=\(userID!)&count=100&filter=all"
@@ -129,10 +132,10 @@ class RemoteDataManager {
                 } else {
                     
                     guard let data = data else { return }
+
                     let userPosts = try! JSONDecoder().decode(UserPosts.self, from: data)
-                    let formattedPosts = userPosts.response.items
                     
-                    complition(formattedPosts, nil)
+                    complition(userPosts.response, nil)
                 }
             }
             

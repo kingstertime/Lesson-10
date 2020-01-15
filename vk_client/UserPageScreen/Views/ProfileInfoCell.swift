@@ -2,10 +2,18 @@ import UIKit
 
 class ProfileInfoCell: UITableViewCell {
     
+    //MARK: - Properties
+    
+    weak var reloadDataDelegate: ReloadDataDelegate!
+    
+    //MARK: - IBOutlets
+    
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageAndCityLabel: UILabel!
     @IBOutlet weak var editPofileButton: UIButton!
+    
+    //MARK: - Setups
     
     func setup(for profileInfo: ProfileInfo) {
         
@@ -30,6 +38,9 @@ class ProfileInfoCell: UITableViewCell {
                 
                 DispatchQueue.main.async {
                     self.avatarImageView.image = image
+                    
+                    //Обновляем данные в родительском контроллере
+                    self.reloadDataDelegate.reloadData()
                 }
             }
         }
@@ -40,6 +51,8 @@ class ProfileInfoCell: UITableViewCell {
         avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
         editPofileButton.layer.cornerRadius = editPofileButton.frame.height / 2
     }
+    
+    //MARK: - IBActions
     
     @IBAction func moreInfoButtonPressed(_ sender: UIButton) {
     }

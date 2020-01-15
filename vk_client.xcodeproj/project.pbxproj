@@ -18,6 +18,8 @@
 		4267C6E123A99BAF00212A48 /* ProfileInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4267C6DF23A99BAF00212A48 /* ProfileInfoCell.xib */; };
 		4267C6E423A99BBD00212A48 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267C6E223A99BBD00212A48 /* PostCell.swift */; };
 		4267C6E523A99BBD00212A48 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4267C6E323A99BBD00212A48 /* PostCell.xib */; };
+		4268B24E23BA86950092C2F9 /* ReloadDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268B24D23BA86950092C2F9 /* ReloadDataDelegate.swift */; };
+		4268B25023BAA0D80092C2F9 /* PostCellParentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268B24F23BAA0D80092C2F9 /* PostCellParentDelegate.swift */; };
 		429A0AE423AA491600ED2ACF /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429A0AE323AA491600ED2ACF /* Helper.swift */; };
 		429A0AE623AA4B1700ED2ACF /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429A0AE523AA4B1700ED2ACF /* UserPageViewController.swift */; };
 		42A7BB6D23A6484F00B65A8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A7BB6C23A6484F00B65A8F /* AppDelegate.swift */; };
@@ -50,6 +52,8 @@
 		4267C6DF23A99BAF00212A48 /* ProfileInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoCell.xib; sourceTree = "<group>"; };
 		4267C6E223A99BBD00212A48 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		4267C6E323A99BBD00212A48 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		4268B24D23BA86950092C2F9 /* ReloadDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadDataDelegate.swift; sourceTree = "<group>"; };
+		4268B24F23BAA0D80092C2F9 /* PostCellParentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellParentDelegate.swift; sourceTree = "<group>"; };
 		429A0AE323AA491600ED2ACF /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		429A0AE523AA4B1700ED2ACF /* UserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
 		42A7BB6923A6484F00B65A8F /* vk_client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vk_client.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,12 +90,8 @@
 		420D03A223A9709C00C31A41 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				420D03A323A970CD00C31A41 /* AuthResponseModel.swift */,
-				420D03A523A9801300C31A41 /* ProfileInfo.swift */,
-				42AB7AAD23AAA7BB0091C73D /* UserPosts.swift */,
-				4239034B23AB9E84003DF13A /* ErrorResponse.swift */,
-				4239034D23AB9F56003DF13A /* Errors.swift */,
-				4239034F23ABA44C003DF13A /* AlertService.swift */,
+				42E2A05E23BA85DC00DC9800 /* CoreDataModels */,
+				42E2A05D23BA85BD00DC9800 /* NetworkResponseModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				42D31B6B23A64E540022EA6F /* AppExtension.swift */,
+				4268B24D23BA86950092C2F9 /* ReloadDataDelegate.swift */,
+				4268B24F23BAA0D80092C2F9 /* PostCellParentDelegate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,6 +208,26 @@
 				4267C6DD23A99B7A00212A48 /* Controllers */,
 			);
 			path = AuthorizationScreen;
+			sourceTree = "<group>";
+		};
+		42E2A05D23BA85BD00DC9800 /* NetworkResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				420D03A323A970CD00C31A41 /* AuthResponseModel.swift */,
+				420D03A523A9801300C31A41 /* ProfileInfo.swift */,
+				42AB7AAD23AAA7BB0091C73D /* UserPosts.swift */,
+				4239034B23AB9E84003DF13A /* ErrorResponse.swift */,
+				4239034D23AB9F56003DF13A /* Errors.swift */,
+				4239034F23ABA44C003DF13A /* AlertService.swift */,
+			);
+			path = NetworkResponseModels;
+			sourceTree = "<group>";
+		};
+		42E2A05E23BA85DC00DC9800 /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreDataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +315,7 @@
 				42A7BB8723A64AFE00B65A8F /* Constants.swift in Sources */,
 				42B00BCB23A67ECC00833252 /* LogInViewController.swift in Sources */,
 				42D31B6C23A64E540022EA6F /* AppExtension.swift in Sources */,
+				4268B25023BAA0D80092C2F9 /* PostCellParentDelegate.swift in Sources */,
 				42B00BD023A680D400833252 /* LocalDataManager.swift in Sources */,
 				429A0AE423AA491600ED2ACF /* Helper.swift in Sources */,
 				42B00BCD23A67F2500833252 /* SignUpViewController.swift in Sources */,
@@ -302,6 +325,7 @@
 				42D31B6E23A64EDE0022EA6F /* AuthorizationViewController.swift in Sources */,
 				4239034C23AB9E84003DF13A /* ErrorResponse.swift in Sources */,
 				42A7BB7723A6484F00B65A8F /* vk_client.xcdatamodeld in Sources */,
+				4268B24E23BA86950092C2F9 /* ReloadDataDelegate.swift in Sources */,
 				4267C6E023A99BAF00212A48 /* ProfileInfoCell.swift in Sources */,
 				42A7BB6D23A6484F00B65A8F /* AppDelegate.swift in Sources */,
 				42A7BB6F23A6484F00B65A8F /* SceneDelegate.swift in Sources */,

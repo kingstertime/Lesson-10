@@ -9,25 +9,45 @@ struct UserPostsResponse: Codable {
     
     var count: Int
     var items: [Post]
+    var profiles: [Profile]?
+    var groups: [Groupe]?
 }
 
 struct Post: Codable {
     
     var id: Int
+    var owner_id: Int
     var from_id: Int
-    var date: Int
+    var date: Int           //В формате unixtime
     var text: String
     var likes: Likes
     var comments: Comments
     var	reposts: Reposts
     var views: Views
-    var attachments: [Attachments]
+    var post_type: String
+    var attachments: [Attachments]?
+    var copy_history: [Post]?
+}
+
+struct Profile: Codable {
+    
+    var id: Int
+    var first_name: String
+    var last_name: String
+    var photo_100: String
+}
+
+struct Groupe: Codable {
+    
+    var id: Int
+    var name: String
+    var photo_100: String
 }
 
 struct Attachments: Codable {
     
     var type: String
-    var photo: Photo
+    var photo: Photo?
 }
 
 struct Photo: Codable {
